@@ -1,0 +1,34 @@
+Archivio clienti dei Galli
+<br><br>
+codice<input type="text" [(ngModel)]="cliente.codice" placeholder="inserisci il codice">
+ragione sociale<input type="text" [(ngModel)]="cliente.ragioneSociale" placeholder="inserisci la ragione sociale">
+indirizzo<input type="text" [(ngModel)]="cliente.indirizzo" placeholder="inserisci l'indirizzo">
+<button (click)="aggiungi()">Aggiungi cliente</button>
+<br><br>
+<input type="text" [(ngModel)]="ricercaCliente" placeholder="ricerca per cliente">
+<button (click)="ricerca()">cerca</button>
+<br>
+<table>
+  <tr>
+    <th>Codice</th>
+    <th>Ragione sociale</th>
+    <th>Indirizzo</th>
+  </tr>
+  <tr *ngFor="let c of clienti">
+    <td> {{p.codice}} </td>
+    <td> {{p.ragioneSociale}} </td>
+    <td> {{p.indirizzo}} </td>
+    <td> 
+    <button (click)="rimuovi()">Rimuovi cliente</button>
+    <button (click)="seleziona()">Seleziona cliente</button>
+  </td>
+  </tr>
+</table>
+<br><br>
+<button (click)="modifica()">Modifica</button>
+<div>
+<button (click)="conferma()">Conferma</button>
+<button (click)="annulla()">Annulla</button>
+</div>
+<br><br>
+<button (click)="resetDb()">reset DB</button>
