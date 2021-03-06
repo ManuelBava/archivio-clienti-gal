@@ -11,14 +11,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class ArchivioClientiServiceImp implements ArchivioClientiService {
 
+    @Autowired
+    ClienteRepository clienteRepository;
+
     @Override
     public List<Cliente> aggiornaListaClienti() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return clienteRepository.findAll();
     }
 
     @Override
     public List<Cliente> inserisciCliente(Cliente c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        clienteRepository.save(c);
+        return aggiornaListaClienti();
     }
 
     @Override
@@ -30,5 +34,10 @@ public class ArchivioClientiServiceImp implements ArchivioClientiService {
     public List<Cliente> cercaCliente(String stringa) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public List<Cliente> selezionaCliente(Cliente c, Cliente s) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -17,4 +17,5 @@ public interface ArchivioClientiService {
     List <Cliente> inserisciCliente (Cliente c);
     List <Cliente> cancellaCliente (Cliente c);
     List <Cliente> cercaCliente (String stringa);
+    List <Cliente> selezionaCliente (Cliente c, Cliente s);
 }
