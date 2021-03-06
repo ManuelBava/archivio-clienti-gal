@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 // Dice a Spring di usare i repository JPA e dove trovarli
 @EnableJpaRepositories(basePackages = {"it.sirfin.archivioClientiGal.repository"})
 // Dice a Spring dove trovare le entità
-@EntityScan(basePackages = {"it.sirfin.archivioClientiGal"})
+@EntityScan(basePackages = {"it.sirfin.archivioClientiGal.model"})
 public class ArchivioClientiGalApplication {
 
 	public static void main(String[] args) {
