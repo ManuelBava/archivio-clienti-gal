@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ArchivioClientiServiceImp implements ArchivioClientiService {
+public class ArchivioClientiServiceImpl implements ArchivioClientiService {
 
     @Autowired
     ClienteRepository clienteRepository;

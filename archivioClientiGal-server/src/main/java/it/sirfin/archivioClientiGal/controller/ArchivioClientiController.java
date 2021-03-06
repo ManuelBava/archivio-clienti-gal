@@ -32,8 +32,8 @@ public class ArchivioClientiController {
 
     @RequestMapping("/inserisci")
     @ResponseBody
-    public ListaClientiDto inserisciCliente(@RequestBody ClienteDto c) {
-        return archivioClientiService.inserisciCliente(c.getCliente());
+    public ListaClientiDto inserisciCliente(@RequestBody ClienteDto dto) {
+        return archivioClientiService.inserisciCliente(dto.getCliente());
     }
 
     
