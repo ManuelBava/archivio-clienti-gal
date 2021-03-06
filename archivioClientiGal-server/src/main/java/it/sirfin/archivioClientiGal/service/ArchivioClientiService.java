@@ -5,6 +5,7 @@
  */
 package it.sirfin.archivioClientiGal.service;
 
+import it.sirfin.archivioClientiGal.dto.ListaClientiDto;
 import it.sirfin.archivioClientiGal.model.Cliente;
 import java.util.List;
 
@@ -13,9 +14,9 @@ import java.util.List;
  * @author Federico
  */
 public interface ArchivioClientiService {
-    List <Cliente> aggiornaListaClienti ();
-    List <Cliente> inserisciCliente (Cliente c);
-    List <Cliente> cancellaCliente (Cliente c);
-    List <Cliente> cercaCliente (String stringa);
-    List <Cliente> selezionaCliente (Cliente c, Cliente s);
+    ListaClientiDto aggiornaListaClienti ();
+    ListaClientiDto inserisciCliente (Cliente c);
+    ListaClientiDto cancellaCliente (Cliente c);
+    ListaClientiDto cercaCliente (String stringa);
+    ListaClientiDto selezionaCliente (Cliente c, Cliente s);
 }

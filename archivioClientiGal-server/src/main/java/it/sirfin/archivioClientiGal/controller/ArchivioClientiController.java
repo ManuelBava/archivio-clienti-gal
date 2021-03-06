@@ -24,20 +24,24 @@ public class ArchivioClientiController {
     @Autowired
     ArchivioClientiService archivioClientiService;
 
-    public List<Cliente> aggiornaListaClienti() {
+    public ListaClientiDto aggiornaListaClienti() {
         return archivioClientiService.aggiornaListaClienti();
     }
 
-    public List<Cliente> inserisciCliente(Cliente c) {
+    public ListaClientiDto inserisciCliente(Cliente c) {
         return archivioClientiService.inserisciCliente(c);
     }
 
-    public List<Cliente> cancellaCliente(Cliente c) {
+    public ListaClientiDto cancellaCliente(Cliente c) {
         return archivioClientiService.cancellaCliente(c);
     }
 
-    public List<Cliente> cercaCliente(String stringa) {
+    public ListaClientiDto cercaCliente(String stringa) {
         return archivioClientiService.cercaCliente(stringa);
+    }
+
+    public ListaClientiDto selezionaCliente(Cliente c, Cliente s) {
+        return archivioClientiService.selezionaCliente(c, s);
     }
 
     

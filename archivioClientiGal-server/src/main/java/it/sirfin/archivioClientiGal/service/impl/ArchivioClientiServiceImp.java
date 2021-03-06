@@ -1,6 +1,7 @@
 
 package it.sirfin.archivioClientiGal.service.impl;
 
+import it.sirfin.archivioClientiGal.dto.ListaClientiDto;
 import it.sirfin.archivioClientiGal.model.Cliente;
 import it.sirfin.archivioClientiGal.repository.ClienteRepository;
 import it.sirfin.archivioClientiGal.service.ArchivioClientiService;
@@ -15,28 +16,28 @@ public class ArchivioClientiServiceImp implements ArchivioClientiService {
     ClienteRepository clienteRepository;
 
     @Override
-    public List<Cliente> aggiornaListaClienti() {
-       return clienteRepository.findAll();
+    public ListaClientiDto aggiornaListaClienti() {
+       return new ListaClientiDto(clienteRepository.findAll());
     }
 
     @Override
-    public List<Cliente> inserisciCliente(Cliente c) {
+    public ListaClientiDto inserisciCliente(Cliente c) {
         clienteRepository.save(c);
         return aggiornaListaClienti();
     }
 
     @Override
-    public List<Cliente> cancellaCliente(Cliente c) {
+    public ListaClientiDto cancellaCliente(Cliente c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Cliente> cercaCliente(String stringa) {
+    public ListaClientiDto cercaCliente(String stringa) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Cliente> selezionaCliente(Cliente c, Cliente s) {
+    public ListaClientiDto selezionaCliente(Cliente c, Cliente s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
