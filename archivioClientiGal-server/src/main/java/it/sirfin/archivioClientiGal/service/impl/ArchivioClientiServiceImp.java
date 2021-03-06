@@ -1,11 +1,11 @@
 
 package it.sirfin.archivioClientiGal.service.impl;
 
+import it.sirfin.archivioClientiGal.dto.ClienteDto;
 import it.sirfin.archivioClientiGal.dto.ListaClientiDto;
 import it.sirfin.archivioClientiGal.model.Cliente;
 import it.sirfin.archivioClientiGal.repository.ClienteRepository;
 import it.sirfin.archivioClientiGal.service.ArchivioClientiService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

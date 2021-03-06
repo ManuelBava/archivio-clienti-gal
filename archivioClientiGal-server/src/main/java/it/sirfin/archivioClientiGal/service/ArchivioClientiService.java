@@ -5,9 +5,9 @@
  */
 package it.sirfin.archivioClientiGal.service;
 
+import it.sirfin.archivioClientiGal.dto.ClienteDto;
 import it.sirfin.archivioClientiGal.dto.ListaClientiDto;
 import it.sirfin.archivioClientiGal.model.Cliente;
-import java.util.List;
 
 /**
  *

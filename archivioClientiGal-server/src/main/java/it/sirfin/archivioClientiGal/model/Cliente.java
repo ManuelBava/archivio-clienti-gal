@@ -20,36 +20,40 @@ import javax.persistence.Id;
 public class Cliente implements Serializable {
     @Id
     @GeneratedValue
-    private Long codice;
+    private Long id;
     
     @Column
-    private String ragione;
+    private String codice;
+    
+    @Column
+    private String ragioneSociale;
     
     @Column
     private String indirizzo;
 
-    public Cliente() {
-    }
-
-    public Cliente(String ragione_sociale, String indirizzo) {
-        this.ragione = ragione_sociale;
+    public Cliente(String codice, String ragione, String indirizzo) {
+        this.codice = codice;
+        this.ragioneSociale = ragione;
         this.indirizzo = indirizzo;
     }
 
-    public Long getCodice() {
+    public Cliente() {
+    }
+
+    public String getCodice() {
         return codice;
     }
 
-    public void setCodice(Long codice) {
+    public void setCodice(String codice) {
         this.codice = codice;
     }
 
-    public String getRagione() {
-        return ragione;
+    public String getRagioneSociale() {
+        return ragioneSociale;
     }
 
-    public void setRagione(String ragione) {
-        this.ragione = ragione;
+    public void setRagioneSociale(String ragioneSociale) {
+        this.ragioneSociale = ragioneSociale;
     }
 
     public String getIndirizzo() {
@@ -60,9 +64,10 @@ public class Cliente implements Serializable {
         this.indirizzo = indirizzo;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "codice=" + codice + ", ragione_sociale=" + ragione + ", indirizzo=" + indirizzo + '}';
-    }
-
+@Override
+public String toString() {
+return "Cliente{" + "id=" + id + ", codice=" + codice + ", ragioneSociale=" + ragioneSociale + ", indirizzo=" + indirizzo + '}';
+  }
+    
+    
 }

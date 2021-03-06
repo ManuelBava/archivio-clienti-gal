@@ -1,5 +1,5 @@
 import { Cliente } from "./cliente";
 
-export class ClienetDto {
+export class ClienteDto {
     cliente = new Cliente();
 }

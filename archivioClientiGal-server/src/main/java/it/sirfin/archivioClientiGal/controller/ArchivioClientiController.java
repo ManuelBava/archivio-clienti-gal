@@ -24,23 +24,35 @@ public class ArchivioClientiController {
     @Autowired
     ArchivioClientiService archivioClientiService;
 
+    @RequestMapping("/aggiorna")
+    @ResponseBody
     public ListaClientiDto aggiornaListaClienti() {
         return archivioClientiService.aggiornaListaClienti();
     }
 
-    public ListaClientiDto inserisciCliente(Cliente c) {
-        return archivioClientiService.inserisciCliente(c);
+    @RequestMapping("/inserisci")
+    @ResponseBody
+    public ListaClientiDto inserisciCliente(@RequestBody ClienteDto c) {
+        return archivioClientiService.inserisciCliente(c.getCliente());
     }
 
-    public ListaClientiDto cancellaCliente(Cliente c) {
+    
+    @RequestMapping("/cancella")
+    @ResponseBody
+    public ListaClientiDto cancellaCliente(@RequestBody Cliente c) {
         return archivioClientiService.cancellaCliente(c);
     }
 
-    public ListaClientiDto cercaCliente(String stringa) {
+    
+    @RequestMapping("/cerca")
+    @ResponseBody
+    public ListaClientiDto cercaCliente(@RequestBody String stringa) {
         return archivioClientiService.cercaCliente(stringa);
     }
 
-    public ListaClientiDto selezionaCliente(Cliente c, Cliente s) {
+    @RequestMapping("/seleziona")
+    @ResponseBody
+    public ListaClientiDto selezionaCliente(@RequestBody Cliente c, @RequestBody Cliente s) {
         return archivioClientiService.selezionaCliente(c, s);
     }
 

@@ -15,20 +15,20 @@ indirizzo<input type="text" [(ngModel)]="cliente.indirizzo" placeholder="inseris
     <th>Indirizzo</th>
   </tr>
   <tr *ngFor="let c of clienti">
-    <td> {{p.codice}} </td>
-    <td> {{p.ragioneSociale}} </td>
-    <td> {{p.indirizzo}} </td>
-    <td> 
-    <button (click)="rimuovi()">Rimuovi cliente</button>
-    <button (click)="seleziona()">Seleziona cliente</button>
-  </td>
+    <td> {{c.codice}} </td>
+    <td> {{c.ragioneSociale}} </td>
+    <td> {{c.indirizzo}} </td>
+    <td>
+      <button (click)="rimuovi()">Rimuovi cliente</button>
+      <button (click)="seleziona()">Seleziona cliente</button>
+    </td>
   </tr>
 </table>
 <br><br>
 <button (click)="modifica()">Modifica</button>
 <div>
-<button (click)="conferma()">Conferma</button>
-<button (click)="annulla()">Annulla</button>
+  <button (click)="conferma()">Conferma</button>
+  <button (click)="annulla()">Annulla</button>
 </div>
 <br><br>
 <button (click)="resetDb()">reset DB</button>
