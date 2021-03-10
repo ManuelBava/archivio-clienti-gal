@@ -15,16 +15,18 @@ export class AppComponent {
   clienti: Cliente[] = [];
   url = "http://localhost:8080/";
   constructor(private http: HttpClient) {
+    this.aggiorna();
   }
 
   aggiorna() {
-
+    this.http.get<ListaClientiDto>(this.url + "aggiorna")
+      .subscribe(r => this.clienti = r.listaClienti);
   }
   aggiungi() {
     let dto = new ClienteDto();
     dto.cliente = this.cliente;
     //Servizio rest
-    let os = this.http.post<ListaClientiDto>( this.url  + "inserisci", dto ).subscribe(v=> this.clienti = v.listaClienti );
+    let os = this.http.post<ListaClientiDto>(this.url + "inserisci", dto).subscribe(v => this.clienti = v.listaClienti);
     //ripulisco i campi
     this.cliente = new Cliente();
   }
@@ -32,17 +34,17 @@ export class AppComponent {
     let dto = new CriterioRicercaDto();
     dto.stringaDaCercare = this.ricercaCliente;
     //preparo servizio rest
-    this.http.post<ListaClientiDto>(this.url+ "cerca", dto)
-    .subscribe (r =>this.clienti = r.listaClienti);
+    this.http.post<ListaClientiDto>(this.url + "cerca", dto)
+      .subscribe(r => this.clienti = r.listaClienti);
   }
   seleziona() {
 
   }
-  rimuovi(c : Cliente) {
-   let dto = new ClienteDto();
-   dto.cliente = c;
-   this.http.post<ListaClientiDto>(this.url+ "cancella", dto)
-   .subscribe (r =>this.clienti = r.listaClienti);
+  rimuovi(c: Cliente) {
+    let dto = new ClienteDto();
+    dto.cliente = c;
+    this.http.post<ListaClientiDto>(this.url + "cancella", dto)
+      .subscribe(r => this.clienti = r.listaClienti);
 
   }
   modifica() {
