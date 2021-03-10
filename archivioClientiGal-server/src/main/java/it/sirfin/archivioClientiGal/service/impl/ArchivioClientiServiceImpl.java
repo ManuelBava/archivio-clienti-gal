@@ -1,4 +1,3 @@
-
 package it.sirfin.archivioClientiGal.service.impl;
 
 import it.sirfin.archivioClientiGal.dto.ClienteDto;
@@ -17,7 +16,7 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
 
     @Override
     public ListaClientiDto aggiornaListaClienti() {
-       return new ListaClientiDto(clienteRepository.findAll());
+        return new ListaClientiDto(clienteRepository.findAll());
     }
 
     @Override
@@ -33,7 +32,8 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
 
     @Override
     public ListaClientiDto cercaCliente(String stringa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new ListaClientiDto(clienteRepository.findByCodiceOrRagioneOrIndirizzo(stringa, stringa, stringa));
+
     }
 
     @Override
