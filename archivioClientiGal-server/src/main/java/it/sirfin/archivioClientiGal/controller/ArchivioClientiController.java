@@ -39,8 +39,8 @@ public class ArchivioClientiController {
     
     @RequestMapping("/cancella")
     @ResponseBody
-    public ListaClientiDto cancellaCliente(@RequestBody Cliente c) {
-        return archivioClientiService.cancellaCliente(c);
+    public ListaClientiDto cancellaCliente(@RequestBody ClienteDto dto) {
+        return archivioClientiService.cancellaCliente(dto.getCliente());
     }
 
     

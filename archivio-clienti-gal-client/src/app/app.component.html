@@ -19,7 +19,7 @@ indirizzo<input type="text" [(ngModel)]="cliente.indirizzo" placeholder="inseris
     <td> {{c.ragioneSociale}} </td>
     <td> {{c.indirizzo}} </td>
     <td>
-      <button (click)="rimuovi()">Rimuovi cliente</button>
+      <button (click)="rimuovi(c)">Rimuovi cliente</button>
       <button (click)="seleziona()">Seleziona cliente</button>
     </td>
   </tr>

@@ -18,5 +18,4 @@ public class ArchivioClientiGalApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ArchivioClientiGalApplication.class, args);
 	}
-
 }

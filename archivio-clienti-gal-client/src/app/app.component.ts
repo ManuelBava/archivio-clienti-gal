@@ -38,7 +38,11 @@ export class AppComponent {
   seleziona() {
 
   }
-  rimuovi() {
+  rimuovi(c : Cliente) {
+   let dto = new ClienteDto();
+   dto.cliente = c;
+   this.http.post<ListaClientiDto>(this.url+ "cancella", dto)
+   .subscribe (r =>this.clienti = r.listaClienti);
 
   }
   modifica() {

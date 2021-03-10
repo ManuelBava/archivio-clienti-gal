@@ -27,7 +27,8 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
 
     @Override
     public ListaClientiDto cancellaCliente(Cliente c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       clienteRepository.delete(c);
+       return aggiornaListaClienti();
     }
 
     @Override
