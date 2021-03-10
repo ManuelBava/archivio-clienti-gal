@@ -32,7 +32,7 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
 
     @Override
     public ListaClientiDto cercaCliente(String stringa) {
-        return new ListaClientiDto(clienteRepository.findByCodiceContainsOrRagioneContainsOrIndirizzoContains(stringa, stringa, stringa));
+        return new ListaClientiDto(clienteRepository.findByCodiceContainsOrRagioneSocialeContainsOrIndirizzoContains(stringa, stringa, stringa));
     }
 
     @Override

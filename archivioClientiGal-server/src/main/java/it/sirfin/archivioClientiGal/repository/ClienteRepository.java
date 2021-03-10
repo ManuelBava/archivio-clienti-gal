@@ -16,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    List<Cliente> findByCodiceContainsOrRagioneContainsOrIndirizzoContains(String s, String c, String v);
+    List<Cliente> findByCodiceContainsOrRagioneSocialeContainsOrIndirizzoContains(String s, String c, String v);
 }

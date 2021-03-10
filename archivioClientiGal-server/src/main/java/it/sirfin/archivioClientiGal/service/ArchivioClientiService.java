@@ -9,10 +9,6 @@ import it.sirfin.archivioClientiGal.dto.ClienteDto;
 import it.sirfin.archivioClientiGal.dto.ListaClientiDto;
 import it.sirfin.archivioClientiGal.model.Cliente;
 
-/**
- *
- * @author Federico
- */
 public interface ArchivioClientiService {
     ListaClientiDto aggiornaListaClienti ();
     ListaClientiDto inserisciCliente (Cliente c);

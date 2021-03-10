@@ -1,7 +1,7 @@
 package it.sirfin.archivioClientiGal.controller;
 
 import it.sirfin.archivioClientiGal.dto.ListaClientiDto;
-import it.sirfin.archivioClientiGal.dto.RicercaDto;
+import it.sirfin.archivioClientiGal.dto.CriterioRicercaDto;
 import it.sirfin.archivioClientiGal.dto.ClienteDto;
 import it.sirfin.archivioClientiGal.model.Cliente;
 import it.sirfin.archivioClientiGal.service.ArchivioClientiService;
@@ -46,8 +46,8 @@ public class ArchivioClientiController {
     
     @RequestMapping("/cerca")
     @ResponseBody
-    public ListaClientiDto cercaCliente(@RequestBody String stringa) {
-        return archivioClientiService.cercaCliente(stringa);
+    public ListaClientiDto cercaCliente(@RequestBody CriterioRicercaDto dto) {
+        return archivioClientiService.cercaCliente(dto.getStringaDaCercare());
     }
 
     @RequestMapping("/seleziona")

@@ -3,6 +3,7 @@ import { Cliente } from './cliente';
 import { ClienteDto } from './cliente-dto';
 import { ListaClientiDto } from './lista-clienti-dto';
 import { HttpClient } from '@angular/common/http';
+import { CriterioRicercaDto } from './criterio-ricerca-dto';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,12 +24,16 @@ export class AppComponent {
     let dto = new ClienteDto();
     dto.cliente = this.cliente;
     //Servizio rest
-    let os = this.http.post<ListaClientiDto>( this.url  + "inserisci", dto ).subscribe(v=> this.clienti = v.listaCliente );
+    let os = this.http.post<ListaClientiDto>( this.url  + "inserisci", dto ).subscribe(v=> this.clienti = v.listaClienti );
     //ripulisco i campi
     this.cliente = new Cliente();
   }
   ricerca() {
-
+    let dto = new CriterioRicercaDto();
+    dto.stringaDaCercare = this.ricercaCliente;
+    //preparo servizio rest
+    this.http.post<ListaClientiDto>(this.url+ "cerca", dto)
+    .subscribe (r =>this.clienti = r.listaClienti);
   }
   seleziona() {
 

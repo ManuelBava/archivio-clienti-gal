@@ -9,14 +9,14 @@ package it.sirfin.archivioClientiGal.dto;
  *
  * @author Federico
  */
-public class RicercaDto {
+public class CriterioRicercaDto {
 
     private String stringaDaCercare;
 
-    public RicercaDto() {
+    public CriterioRicercaDto() {
     }
 
-    public RicercaDto(String stringaDaCercare) {
+    public CriterioRicercaDto(String stringaDaCercare) {
         this.stringaDaCercare = stringaDaCercare;
     }
 
